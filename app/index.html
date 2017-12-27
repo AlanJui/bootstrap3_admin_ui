@@ -73,7 +73,7 @@
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a href="#">Add Page</a></li>
+                <li><a type="button" data-toggle="modal" href="#addPage">Add Page</a></li>
                 <li><a href="#">Add Post</a></li>
                 <li><a href="#">Add User</a></li>
               </ul>
@@ -232,6 +232,55 @@
       </div>
     </section>
 
+    <!-- Modals -->
+
+    <!-- Add Page -->
+    <div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <form>
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Add Page</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                <label for="page-title">Page Title</label>
+                <input type="text" name="page-title" id="page-title" class="form-control"
+                       placeholder="Page Title">
+              </div>
+              <div class="form-group">
+                <label for="editor1">Page Body</label>
+                <textarea name="editor1" id="editor1" class="form-control"
+                          placeholder="Page Body"></textarea>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="published" id="published"> Published
+                </label>
+              </div>
+              <div class="form-group">
+                <label for="add-tags">Meta Tags</label>
+                <input type="text" name="add-tags" id="add-tags" class="form-control"
+                       placeholder="Add Some Tags...">
+              </div>
+              <div class="form-group">
+                <label for="meta-description">Meta Description</label>
+                <input name="meta-description" id="meta-description" class="form-control"
+                       placeholder="Add Meta Description...">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------------------------------------------------  -->
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -263,10 +312,15 @@
     <script src="/bower_components/bootstrap/js/tab.js"></script>
     <script src="/bower_components/bootstrap/js/tooltip.js"></script>
     <script src="/bower_components/bootstrap/js/transition.js"></script>
+
+    <script src="https://cdn.ckeditor.com/4.8.0/standard/ckeditor.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
+    <script>
+      CKEDITOR.replace( 'editor1' );
+    </script>
   </body>
 </html>
